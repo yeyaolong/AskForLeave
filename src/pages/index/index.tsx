@@ -1,8 +1,90 @@
 import { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.less'
+import { Leave } from '../../interface/index';
 
-export default class Index extends Component {
+interface MyProps {}
+interface MyState {
+  leaveList: Array<Leave>
+  
+}
+
+
+export default class Index extends Component<MyProps, MyState> {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      leaveList: [
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "annual",
+          name: "年休假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "eventLeaveSalary",
+          name: "全薪事假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "sickLeaveSalary",
+          name: "全薪病假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "restLeave",
+          name: "调休"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "weddingLeave",
+          name: "婚假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "maternityLeave",
+          name: "产假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "paternityLeave",
+          name: "陪产假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "bereavementLeave",
+          name: "丧假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "eventLeave",
+          name: "事假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "sickLeave",
+          name: "病假"
+        },
+        {
+          rest: 3,
+          dispense: "手动发放",
+          type: "obstetricsLeave",
+          name: "产检假"
+        },
+      ]
+    }
+  }
 
   componentWillMount () { }
 
@@ -15,9 +97,27 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
+    let leaveList = this.state.leaveList.map((item, index) => {
+      return (
+        <View className='leave-content cell' key={index}>
+          <View className='prefix'>
+            <View className='circle'></View>
+          </View>
+          <View className='cell-label leave-name'>
+            { item.name }
+          </View>
+          <View className='cell-content leave-content'>
+            <View className='rest'>剩余{ item.rest }天</View>
+            <View className='dispense'>{ item.dispense }</View>
+            <View className='suffix'>{ item.dispense }</View>
+          </View>
+        </View>
+      )
+    })
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <Text>请选择请假类型</Text>
+        { leaveList }
       </View>
     )
   }
