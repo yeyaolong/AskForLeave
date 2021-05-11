@@ -52,7 +52,10 @@ export default class Index extends Component<MyProps, MyState> {
     return (
       <View className='index'>
         <View className='description'>请选择请假类型</View>
-        <LeaveList />
+        <View className='container'>
+          <LeaveList />
+        </View>
+        
         <View className='footer'>
           <View className={['nav', this.state.current === 0 ? 'current' : ''].join(' ')} onClick={this.handleNavChange.bind(this, 0)}>
             <AtIcon value='block iconfont icon-qingjia' size='30' ></AtIcon>
