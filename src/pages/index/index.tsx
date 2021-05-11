@@ -1,7 +1,12 @@
 import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
+import Taro from '@tarojs/taro';
+import 'taro-ui/dist/style/components/icon.scss';
+
+import "taro-ui/dist/style/components/message.scss";
 import './index.less'
 import { Leave } from '../../interface/index';
+
 
 interface MyProps {}
 interface MyState {
@@ -96,12 +101,17 @@ export default class Index extends Component<MyProps, MyState> {
 
   componentDidHide () { }
 
+  leave(data) {
+    console.log(data);
+    Taro.navigateTo({url: '/pages/form/form'})
+  }
+
   render () {
     let leaveList = this.state.leaveList.map((item, index) => {
       return (
-        <View className='leave-content cell' key={index}>
+        <View className='leave-content cell' key={index} onClick={() => this.leave(item)}>
           <View className='prefix'>
-            <View className='circle'></View>
+            <View className={['circle', 'circle-' + index].join(' ')}></View>
           </View>
           <View className='cell-label leave-name'>
             { item.name }
@@ -109,14 +119,16 @@ export default class Index extends Component<MyProps, MyState> {
           <View className='cell-content leave-content'>
             <View className='rest'>剩余{ item.rest }天</View>
             <View className='dispense'>{ item.dispense }</View>
-            <View className='suffix'>{ item.dispense }</View>
           </View>
+          <View className='suffix'>
+              <View className='at-icon at-icon-chevron-right'></View>
+            </View>
         </View>
       )
     })
     return (
       <View className='index'>
-        <Text>请选择请假类型</Text>
+        <View className='description'>请选择请假类型</View>
         { leaveList }
       </View>
     )

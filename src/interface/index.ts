@@ -1,10 +1,16 @@
 interface Leave {
-    name: String,
-    rest: Number,
-    dispense: String,
-    type: String
+    name: string,
+    rest: number,
+    dispense: string,
+    type: string
+}
+
+interface Tab {
+    title: string,
+    text?: number
 }
 
 export {
-    Leave
+    Leave,
+    Tab
 }

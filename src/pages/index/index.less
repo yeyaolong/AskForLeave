@@ -1,48 +1,69 @@
+
+@import '../../assets/less/color.less';
+@import '../../assets/less/cell.less';
+
 .index {
     background: #F8F8F8;
 }
-.cell {
-    border: 0px;
-    padding: 24px;
-    margin: 24px 0;
-    background: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    
-    .prefix {
-        display: inline-block;
-        margin: 0 16px 0 0;
-    }
 
-    .cell-label {
-        width: 40%;
-        border-right: 4px solid #cecece;
-        vertical-align: middle;
-    }
-
-    .cell-content {
-        width: 60%;
-        vertical-align: middle;
-    }
-    .suffix {}
-}
 .leave-name {
     font-size: 32px;
     line-height: 32px;
     padding: 3% 0;
-    .circle {
-        border: 0;
-        background-color: #f00;
-        border-radius: 100px;
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-    }
+    
+}
+
+.description {
+    padding: 24px 24px 0 24px;
+    color: #cecece;
 }
 
 .leave-content {
     padding-left: 36px;
     line-height: 36px;
+    position: relative;
+    .circle {
+        border: 0;
+        // background-color: #f00;
+        border-radius: 100px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        &.circle-0 {
+            background-color: @valcano-6;
+        }
+        &.circle-1 {
+            background-color: @gold-6;
+        }
+        &.circle-2 {
+            background-color: @yellow-6;
+        }
+        &.circle-3 {
+            background-color: @lime-6;
+        }
+        &.circle-4 {
+            background-color: @green-6;
+        }
+        &.circle-5 {
+            background-color: @cyan-6;
+        }
+        &.circle-6 {
+            background-color: @blue-6;
+        }
+        &.circle-7 {
+            background-color: @geekblue-6;
+        }
+        &.circle-8 {
+            background-color: @purple-6;
+        }
+        &.circle-9 {
+            background-color: @magenta-6;
+        }
+        &.circle-10 {
+            background-color: @red-6;
+        }
+    }
+
     .rest {       
         font-size: 32px;
     }
