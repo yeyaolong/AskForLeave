@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import './app.less'
+import './assets/icon/iconfont.css';
 
 
 class App extends Component {
