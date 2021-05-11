@@ -1,0 +1,82 @@
+@import '../../../assets/less/color.less';
+
+.back-list {
+    background-color: @gray-1;
+    height: 100%;
+    .back-container {
+        padding: 30px;
+        display:flex;
+        border-bottom: 1px solid @gray-3;
+    }
+    .avatar-container {
+        width: 20%;
+    }
+    .avatar {
+        width: 0.9rem;
+        height: 0.9rem;
+        border-radius: 100px;
+    }
+    .container {
+        width: 80%;
+        .header {
+            display: flex;
+            width: 100%;
+            .title {
+                font-weight: bold;
+                font-size: 36px;
+                width: 80%;
+                vertical-align: bottom;
+                text-align: left;
+            }
+            .apply-date {
+                width: 20%;
+                font-size: 24px;
+                color: @gray-7;
+                vertical-align: bottom;
+                text-align: right;
+            }
+        }
+        .detail {
+            margin-top: 24px;
+            color: @gray-7;
+            .operation {
+                display: flex;
+                align-items: center;
+                margin-top: 24px;
+                
+                .status {
+                    width: 50%;
+                    text-align: left;
+                }
+                .status.success {
+                    color: @green-6;
+                }
+                .status.error {
+                    color: @red-6;
+                }
+                .btn-group { 
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    text-align: right;
+                    .btn {
+                        color: @blue-6;
+                        width: 45%;
+                        padding: 0 5%;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    .divider {
+                        background-color: @gray-5;
+                        width: 3px;
+                        height: 24px;
+                        // padding: 5% 0;
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+}

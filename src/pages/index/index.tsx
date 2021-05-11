@@ -8,7 +8,7 @@ import "taro-ui/dist/style/components/message.scss";
 import './index.less'
 
 import LeaveList from './components/leaveList';
-
+import BackList from './components/backList';
 
 interface MyProps {}
 interface MyState {
@@ -21,7 +21,7 @@ export default class Index extends Component<MyProps, MyState> {
   constructor(props) {
     super(props);
     this.state = {
-      current: 0
+      current: 1
     }
   }
 
@@ -50,10 +50,9 @@ export default class Index extends Component<MyProps, MyState> {
 
   render () {
     return (
-      <View className='index'>
-        <View className='description'>请选择请假类型</View>
-        <View className='container'>
-          <LeaveList />
+      <View className='index'>        
+        <View className='index-container'>
+          { this.state.current === 0 ? <LeaveList /> : this.state.current === 1 ? <BackList /> : ''}
         </View>
         
         <View className='footer'>

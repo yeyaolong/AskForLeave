@@ -110,6 +110,7 @@ export default class LeaveList extends Component<MyProps, MyState> {
   render () {
     let leaveListStr = this.state.leaveList.map((item, index) => {
       return (
+        
         <View className='leave-content cell' key={index} onClick={() => this.leave(item)}>
           <View className='prefix'>
             <View className={['circle', 'circle-' + index].join(' ')}></View>
@@ -129,6 +130,7 @@ export default class LeaveList extends Component<MyProps, MyState> {
     })
     return (
       <View className='leave-list'>
+        <View className='description'>请选择请假类型</View>
         { leaveListStr }
       </View>
       
