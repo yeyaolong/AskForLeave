@@ -1,11 +1,8 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
 
-import Taro from '@tarojs/taro';
-import { AtTabBar } from 'taro-ui'
-
-import "taro-ui/dist/style/components/tab-bar.scss";
-import "taro-ui/dist/style/components/badge.scss";
+import { AtTabs, AtTabsPane } from 'taro-ui'
+import "taro-ui/dist/style/components/tabs.scss";
 
 import './form.less'
 
@@ -61,7 +58,17 @@ export default class Index extends Component<MyProps, MyState> {
   render () {
     return (
       <View className='index'>
-        <AtTabBar tabList={this.state.tabList} onClick={this.handleTabChange.bind(this, )} current={this.state.current} />
+        <AtTabs current={this.state.current} tabList={this.state.tabList} onClick={this.handleTabChange.bind(this)}>
+          <AtTabsPane current={this.state.current} index={0} >
+            <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</View>
+          </AtTabsPane>
+          <AtTabsPane current={this.state.current} index={1}>
+            <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</View>
+          </AtTabsPane>
+          <AtTabsPane current={this.state.current} index={2}>
+            <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</View>
+          </AtTabsPane>
+        </AtTabs>
       </View>
     )
   }
