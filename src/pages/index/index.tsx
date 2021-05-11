@@ -52,7 +52,7 @@ export default class Index extends Component<MyProps, MyState> {
     return (
       <View className='index'>        
         <View className='index-container'>
-          { this.state.current === 0 ? <LeaveList /> : this.state.current === 1 ? <BackList /> : ''}
+          { this.state.current === 0 ? <LeaveList /> : this.state.current === 1 || this.state.current === 2 ? <BackList /> : ''}
         </View>
         
         <View className='footer'>
