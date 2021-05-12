@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
 import Taro from '@tarojs/taro';
-import 'taro-ui/dist/style/components/icon.scss';
+
 import "taro-ui/dist/style/components/message.scss";
 
 import './leaveList.less';
@@ -123,8 +123,8 @@ export default class LeaveList extends Component<MyProps, MyState> {
             <View className='dispense'>{ item.dispense }</View>
           </View>
           <View className='suffix'>
-              <View className='at-icon at-icon-chevron-right'></View>
-            </View>
+            <View className='at-icon at-icon-chevron-right'></View>
+          </View>
         </View>
       )
     })

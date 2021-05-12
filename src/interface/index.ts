@@ -19,8 +19,10 @@ interface Backinfo {
 }
 
 interface UserInfo {
+    id: string,
     name: string,
-    phone: string
+    phone: string,
+    avatar: string // 头像url
 }
 
 export {

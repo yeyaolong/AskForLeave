@@ -26,8 +26,10 @@ export default class BackList extends Component<MyProps, MyState> {
     super(props);
     this.state = {
         userInfo: {
+          id: '',
           name: '叶瑶隆',
-          phone: '13712345678'
+          phone: '13712345678',
+          avatar: 'https://avatars.githubusercontent.com/u/10331296?s=400&u=57d4cf383383ac6e3d21b704cfe7e7b3aaed777c&v=4'
         },
         backList: [
             {
@@ -85,7 +87,7 @@ export default class BackList extends Component<MyProps, MyState> {
                 <View className='avatar-container'>
                     <image 
                       className='avatar'
-                      src='https://avatars.githubusercontent.com/u/10331296?s=400&u=57d4cf383383ac6e3d21b704cfe7e7b3aaed777c&v=4' 
+                      src={this.state.userInfo.avatar}
                     />
                 </View>
                 <View className='container'>

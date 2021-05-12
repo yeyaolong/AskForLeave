@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import 'taro-ui/dist/style/components/icon.scss';
 import './app.less'
 import './assets/icon/iconfont.css';
 

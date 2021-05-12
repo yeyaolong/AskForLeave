@@ -1,7 +1,7 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/form/form'
+    'pages/form/form',
+    'pages/index/index'
   ],
   window: {
     backgroundTextStyle: 'light',
