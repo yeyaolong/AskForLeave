@@ -44,7 +44,7 @@ export default class Form extends Component<MyProps, MyState> {
         submitter: {
           avatar: 'https://avatars.githubusercontent.com/u/10331296?s=400&u=57d4cf383383ac6e3d21b704cfe7e7b3aaed777c&v=4',
           phone: '13712345671',
-          name: '叶瑶隆',
+          name: '河童重工',
           id: ''
         }
     }

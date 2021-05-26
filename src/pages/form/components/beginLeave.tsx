@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-
-// import Cell from '../../../components/cell/cell';
+import LeaveTimeForm from './leaveTimeForm';
 
 import './beginLeave.less'
 
@@ -53,7 +52,6 @@ export default class BeginLeave extends Component<MyProps, MyState> {
   render () {
     return (
         <View className='begin-leave'>
-            
             <View className='submitter cell'>
                 <View className='cell-label'>
                     <View className='label'>提交人</View>
@@ -81,6 +79,8 @@ export default class BeginLeave extends Component<MyProps, MyState> {
             <View className='balance'>
               假期余额：{ this.state.leave.rest }
             </View>
+
+            <LeaveTimeForm></LeaveTimeForm>
         </View>
     )
   }
