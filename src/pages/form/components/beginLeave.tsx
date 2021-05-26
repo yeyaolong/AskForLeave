@@ -16,7 +16,6 @@ interface MyProps {
 }
 interface MyState {
   leave: Leave,
-  balance: number,
   leaveList?: Array<Leave>
 }
 
@@ -32,74 +31,6 @@ export default class BeginLeave extends Component<MyProps, MyState> {
         type: "annual",
         name: "年休假"
       }
-      // leaveList: [
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "annual",
-      //     name: "年休假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "eventLeaveSalary",
-      //     name: "全薪事假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "sickLeaveSalary",
-      //     name: "全薪病假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "restLeave",
-      //     name: "调休"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "weddingLeave",
-      //     name: "婚假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "maternityLeave",
-      //     name: "产假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "paternityLeave",
-      //     name: "陪产假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "bereavementLeave",
-      //     name: "丧假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "eventLeave",
-      //     name: "事假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "sickLeave",
-      //     name: "病假"
-      //   },
-      //   {
-      //     rest: 3,
-      //     dispense: "手动发放",
-      //     type: "obstetricsLeave",
-      //     name: "产检假"
-      //   },
-      // ]
     }
   }
 
