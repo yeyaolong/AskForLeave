@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "MyAliPay",
-  "description": "钉钉小程序 练习项目 模仿支付宝",
-  "appid": "touristappid",
+  "projectname": "AskLeave",
+  "description": "请假系统用来练习Taro",
+  "appid": "wxce473234f408246c",
   "setting": {
     "urlCheck": true,
     "es6": false,
