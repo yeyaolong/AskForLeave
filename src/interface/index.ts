@@ -11,6 +11,7 @@ interface Tab {
 }
 
 interface Backinfo {
+    id: number,
     type: string, // 请假类型
     starttime: string, // 开始时间
     endtime: string, // 结束时间

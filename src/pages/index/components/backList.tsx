@@ -33,6 +33,7 @@ export default class BackList extends Component<MyProps, MyState> {
         },
         backList: [
             {
+                id: 1,
                 type: '调休',
                 applyDate: '2021.03.11',
                 starttime: '2021-03-22 08:30',
@@ -40,6 +41,7 @@ export default class BackList extends Component<MyProps, MyState> {
                 status: 'success'
             },
             {
+              id: 2,
               type: '年假',
               applyDate: '2020.02.18',
               starttime: '2020-02-19 上午',
@@ -66,10 +68,29 @@ export default class BackList extends Component<MyProps, MyState> {
 
   cancel(data) {
     // 撤销
-    Taro.atMessage({
-      'message': `撤销记录${data.starttime}~${data.endtime}`,
-      'type': 'success',
-    })
+    let backListCopy = JSON.parse(JSON.stringify(this.state.backList));
+    let ind = -1;
+    backListCopy.forEach((item, index) => {
+      if (item.id === data.id) {
+        ind = index;
+      }
+    });
+
+    if (ind > -1) {
+      backListCopy.splice(ind, 1);
+      Taro.atMessage({
+        'message': `撤销记录成功`,
+        'type': 'success',
+      });
+      this.setState({
+        backList: backListCopy
+      });
+    } else {
+      Taro.atMessage({
+        'message': `撤销记录失败`,
+        'type': 'error',
+      });
+    }
   }
 
   edit(data) {
