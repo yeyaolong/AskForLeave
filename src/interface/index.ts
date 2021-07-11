@@ -1,8 +1,8 @@
 interface Leave {
-    name: string,
-    rest: number,
-    dispense: string,
-    type: string
+    name: string | undefined,
+    rest: number | undefined,
+    dispense: string | undefined,
+    type: string | undefined
 }
 
 interface Tab {

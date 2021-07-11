@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-
 import { AtTabs, AtTabsPane, AtMessage } from 'taro-ui'
 
 import Taro from '@tarojs/taro';
@@ -20,7 +19,11 @@ interface MyProps {}
 interface MyState { 
     tabList: Array<Tab> ,
     current: number,
-    submitter: UserInfo
+    submitter: UserInfo,
+    name: string | undefined, // 请假类型(中文)
+    type: string | undefined, // 请假类型
+    rest: number | undefined, // 剩余请假天数
+    dispense: string | undefined // 分发方式
 }
 
 
@@ -46,13 +49,26 @@ export default class Form extends Component<MyProps, MyState> {
           phone: '13712345671',
           name: '河童重工',
           id: ''
-        }
+        },
+        name: '',
+        type: '',
+        rest: 0,
+        dispense: ''
     }
   }
 
   componentWillMount () { }
 
-  componentDidMount () { }
+  componentDidMount () { 
+    let { name, rest, type, dispense } = Taro!.getCurrentInstance()!.router!.params;
+    let restNum = rest ? parseInt(rest) : 0;
+    this.setState({
+      name,
+      rest: restNum,
+      type,
+      dispense
+    })
+  }
 
   componentWillUnmount () { }
 
@@ -81,7 +97,14 @@ export default class Form extends Component<MyProps, MyState> {
         <AtTabs current={this.state.current} tabList={this.state.tabList} onClick={this.handleTabChange.bind(this)}>
           <AtTabsPane current={this.state.current} index={0} >
             <View>
-              <BeginLeave submitter={this.state.submitter} handleProxy={this.handleProxy.bind(this)} />
+              <BeginLeave 
+                typeName={this.state.name}
+                type={this.state.type}
+                rest={this.state.rest}
+                dispense={this.state.dispense}
+                submitter={this.state.submitter}
+                handleProxy={this.handleProxy.bind(this)}
+              />
             </View>
             
           </AtTabsPane>

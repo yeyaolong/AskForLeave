@@ -23,37 +23,37 @@ export default class LeaveList extends Component<MyProps, MyState> {
     this.state = {
       leaveList: [
         {
-          rest: 3,
+          rest: 9,
           dispense: "手动发放",
           type: "annual",
           name: "年休假"
         },
         {
-          rest: 3,
+          rest: 8,
           dispense: "手动发放",
           type: "eventLeaveSalary",
           name: "全薪事假"
         },
         {
-          rest: 3,
+          rest: 7,
           dispense: "手动发放",
           type: "sickLeaveSalary",
           name: "全薪病假"
         },
         {
-          rest: 3,
+          rest: 6,
           dispense: "手动发放",
           type: "restLeave",
           name: "调休"
         },
         {
-          rest: 3,
+          rest: 5,
           dispense: "手动发放",
           type: "weddingLeave",
           name: "婚假"
         },
         {
-          rest: 3,
+          rest: 4,
           dispense: "手动发放",
           type: "maternityLeave",
           name: "产假"
@@ -65,25 +65,25 @@ export default class LeaveList extends Component<MyProps, MyState> {
           name: "陪产假"
         },
         {
-          rest: 3,
+          rest: 2,
           dispense: "手动发放",
           type: "bereavementLeave",
           name: "丧假"
         },
         {
-          rest: 3,
+          rest: 1,
           dispense: "手动发放",
           type: "eventLeave",
           name: "事假"
         },
         {
-          rest: 3,
+          rest: 0,
           dispense: "手动发放",
           type: "sickLeave",
           name: "病假"
         },
         {
-          rest: 3,
+          rest: 10,
           dispense: "手动发放",
           type: "obstetricsLeave",
           name: "产检假"
@@ -103,8 +103,8 @@ export default class LeaveList extends Component<MyProps, MyState> {
   componentDidHide () { }
 
   leave(data) {
-    console.log(data);
-    Taro.navigateTo({url: '/pages/form/form'})
+    const { type, name, rest } = data;
+    Taro.navigateTo({url: `/pages/form/form?type=${type}&name=${name}&rest=${rest}`})
   }
 
   render () {
