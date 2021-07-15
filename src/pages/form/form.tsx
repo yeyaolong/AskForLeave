@@ -8,6 +8,7 @@ import "taro-ui/dist/style/components/message.scss";
 import "taro-ui/dist/style/components/tabs.scss";
 
 import BeginLeave from './components/beginLeave';
+import Report from './components/report';
 import './form.less'
 
 
@@ -94,7 +95,7 @@ export default class Form extends Component<MyProps, MyState> {
     return (
       <View className='form'>
         <AtMessage />
-        <AtTabs current={this.state.current} tabList={this.state.tabList} onClick={this.handleTabChange.bind(this)}>
+        <AtTabs swipeable={false} current={this.state.current} tabList={this.state.tabList} onClick={this.handleTabChange.bind(this)}>
           <AtTabsPane current={this.state.current} index={0} >
             <View>
               <BeginLeave 
@@ -109,7 +110,8 @@ export default class Form extends Component<MyProps, MyState> {
             
           </AtTabsPane>
           <AtTabsPane current={this.state.current} index={1}>
-            <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</View>
+            {/* <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</View> */}
+            <Report></Report>
           </AtTabsPane>
           <AtTabsPane current={this.state.current} index={2}>
             <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</View>
