@@ -110,7 +110,7 @@ export default class Report extends Component<MyProps, MyState> {
 
   componentDidMount () { }
 
-  componentWillReceiveProps(props: MyProps) {
+  componentWillReceiveProps() {
     
   }
 
